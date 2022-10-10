@@ -25,10 +25,12 @@ local orbTypes = {
 }
 
 local remote = game:GetService("ReplicatedStorage").rEvents.orbEvent
+local rebirthRemote = game:GetService("ReplicatedStorage").rEvents.rebirthEvent
+local Player = game.Players.LocalPlayer
+local PlayerLevel = Player.level.Value
 
 function getOrb(orbType)
     local a,o,p
-
 
     for i,v in pairs(orbTypes) do
         if v.orbType == orbType then
@@ -41,15 +43,25 @@ function getOrb(orbType)
 end
 
 _G.Enabled = true
+
 local sh = _G.Enabled
-local time = 0.05
 
 spawn(function ()
-    while sh do
-        wait(time)
+    while true do
+        wait()
         remote:FireServer(getOrb("Red Orb"))
-        remote:FireServer(getOrb("Blue Orb"))
-        remote:FireServer(getOrb("Orange Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
+        remote:FireServer(getOrb("Red Orb"))
         remote:FireServer(getOrb("Gem"))
     end
 end)
